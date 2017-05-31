@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DCD66969-A665-4EAF-AA94-BC41FC81D5BD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Winform</RootNamespace>
+    <AssemblyName>Winform</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.1" />
+    <Reference Include="DevExpress.Data.v16.1" />
+    <Reference Include="DevExpress.Printing.v16.1.Core" />
+    <Reference Include="DevExpress.Utils.v16.1" />
+    <Reference Include="DevExpress.XtraBars.v16.1" />
+    <Reference Include="DevExpress.Sparkline.v16.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v16.1" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\DanhMuc\NhapHangHoaController.cs" />
+    <Compile Include="Controllers\DanhMuc\HangHoaController.cs" />
+    <Compile Include="Controllers\DanhMuc\DonViTinhController.cs" />
+    <Compile Include="Controllers\DanhMuc\NhomHangController.cs" />
+    <Compile Include="fLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLayout.Designer.cs">
+      <DependentUpon>fLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Karaoke2017DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Karaoke2017DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AltModels\HangHoa\AltHangHoaTable.cs" />
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserRole.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BH_ChiTietBanHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BH_ChiTietTraHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BH_HoaDonBanHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BH_TraHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_Ban.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_DonViTinh.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_HanSuDung.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_KhachHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_Kho.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_KhuVuc.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_LoaiHoaDonBanHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_LyDoChi.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_LyDoHuyBan.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_LyDoHuyDatBan.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_LyDoNhap.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_LyDoThu.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_LyDoXuat.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_NhaCungCap.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_NhaSanXuat.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_NhomHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_NhomKhachHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_NhomNguyenLieu.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_ChiTietNhapHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_ChiTietNhapNguyenLieu.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_ChiTietXuatHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_ChiTietXuatNguyenLieu.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_HangHoa.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_NguyenLieu.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_NhapHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_NhapNguyenLieu.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_PhieuChi.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_PhieuThu.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_XuatHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KT_XuatNguyenLieu.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDER_ChiTietChuyenBan.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDER_ChiTietDatBan.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDER_ChiTietHoaDonBanHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDER_ChuyenBan.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDER_DatBan.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDER_GhepBan.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDER_HoaDonBanHang.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDER_HuyMon.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDER_ThemMon.cs">
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLKaraoke.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKaraoke.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLKaraoke.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKaraoke.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLKaraoke.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKaraoke.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\DanhMuc\HangHoa\fHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DanhMuc\HangHoa\fHangHoa.Designer.cs">
+      <DependentUpon>fHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DanhMuc\HangHoa\fHangHoaUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DanhMuc\HangHoa\fHangHoaUpdate.Designer.cs">
+      <DependentUpon>fHangHoaUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DanhMuc\NhomHang\fNhomHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DanhMuc\NhomHang\fNhomHang.Designer.cs">
+      <DependentUpon>fNhomHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DanhMuc\NhomHang\fNhomHangUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DanhMuc\NhomHang\fNhomHangUpdate.Designer.cs">
+      <DependentUpon>fNhomHangUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QLKho\HangHoa\Nhap\fNhapHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QLKho\HangHoa\Nhap\fNhapHangHoa.Designer.cs">
+      <DependentUpon>fNhapHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QLKho\HangHoa\Nhap\fNhapHangHoaUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QLKho\HangHoa\Nhap\fNhapHangHoaUpdate.Designer.cs">
+      <DependentUpon>fNhapHangHoaUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QLKho\HangHoa\Nhap\fSoLuongNhapHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QLKho\HangHoa\Nhap\fSoLuongNhapHangHoa.Designer.cs">
+      <DependentUpon>fSoLuongNhapHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Wait\fWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Wait\fWait.Designer.cs">
+      <DependentUpon>fWait.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fLayout.resx">
+      <DependentUpon>fLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\DanhMuc\HangHoa\fHangHoa.resx">
+      <DependentUpon>fHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DanhMuc\HangHoa\fHangHoaUpdate.resx">
+      <DependentUpon>fHangHoaUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DanhMuc\NhomHang\fNhomHang.resx">
+      <DependentUpon>fNhomHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DanhMuc\NhomHang\fNhomHangUpdate.resx">
+      <DependentUpon>fNhomHangUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QLKho\HangHoa\Nhap\fNhapHangHoa.resx">
+      <DependentUpon>fNhapHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QLKho\HangHoa\Nhap\fNhapHangHoaUpdate.resx">
+      <DependentUpon>fNhapHangHoaUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QLKho\HangHoa\Nhap\fSoLuongNhapHangHoa.resx">
+      <DependentUpon>fSoLuongNhapHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Wait\fWait.resx">
+      <DependentUpon>fWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Models\QLKaraoke.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLKaraoke.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Karaoke2017DataSet.xsc">
+      <DependentUpon>Karaoke2017DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Karaoke2017DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Karaoke2017DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Karaoke2017DataSet.xss">
+      <DependentUpon>Karaoke2017DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Models\QLKaraoke.edmx.diagram">
+      <DependentUpon>QLKaraoke.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\QLKaraoke.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLKaraoke.edmx</DependentUpon>
+      <LastGenOutput>QLKaraoke.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QLKaraoke.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLKaraoke.edmx</DependentUpon>
+      <LastGenOutput>QLKaraoke.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\import.ico" />
+    <None Include="Resources\export.ico" />
+    <None Include="Resources\printer.ico" />
+    <None Include="Resources\save.ico" />
+    <None Include="Resources\close.ico" />
+    <None Include="Resources\category.png" />
+    <None Include="Resources\reload.ico" />
+    <None Include="Resources\reload.png" />
+    <None Include="Resources\remove.ico" />
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\edit.ico" />
+    <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

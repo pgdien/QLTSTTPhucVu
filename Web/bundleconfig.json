@@ -1,0 +1,182 @@
+[
+  {
+    "outputFileName": "Scripts/Admin/Dashboard/Dashboard.min.html",
+    "inputFiles": [
+      "Scripts/Admin/Dashboard/Dashboard.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/Dashboard/dashboardController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/Dashboard/dashboardController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/Ban/banController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/Ban/banController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/Ban/Ban.min.html",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/Ban/Ban.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/DonViTinh/DonViTinh.min.html",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/DonViTinh/DonViTinh.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/DonViTinh/DonViTinhController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/DonViTinh/DonViTinhController.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/MyCSS/customize-dx.min.css",
+    "inputFiles": [
+      "Content/MyCSS/customize-dx.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/MyCSS/generic.light.custom.min.css",
+    "inputFiles": [
+      "Content/MyCSS/generic.light.custom.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/KhachHang/KhachHang.min.html",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/KhachHang/KhachHang.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/KhachHang/khachhangController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/KhachHang/khachhangController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/Kho/MatHang/MatHang.min.html",
+    "inputFiles": [
+      "Scripts/Admin/Kho/MatHang/MatHang.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/Kho/MatHang/mathangController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/Kho/MatHang/mathangController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/ThucDon/thucdonController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/ThucDon/thucdonController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/ThucDon/ThucDon.min.html",
+    "inputFiles": [
+      "Scripts/Admin/ThucDon/ThucDon.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/NhaCungCap/NhaCungCap.min.html",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/NhaCungCap/NhaCungCap.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/NhaCungCap/nhacungcapController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/NhaCungCap/nhacungcapController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/Kho/NhapHang/nhaphangController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/Kho/NhapHang/nhaphangController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/Kho/XuatHang/XuatHang.min.html",
+    "inputFiles": [
+      "Scripts/Admin/Kho/XuatHang/XuatHang.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/Kho/XuatHang/xuathangController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/Kho/XuatHang/xuathangController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/BanHang/BanHang.min.html",
+    "inputFiles": [
+      "Scripts/Admin/BanHang/BanHang.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/BanHang/banhangController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/BanHang/banhangController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/NhanVienPhucVu/NhanVienPhucVu.min.html",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/NhanVienPhucVu/NhanVienPhucVu.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/DanhMuc/NhanVienPhucVu/nhanvienphucvuController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/DanhMuc/NhanVienPhucVu/nhanvienphucvuController.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/MyCSS/gistfile1.min.css",
+    "inputFiles": [
+      "Content/MyCSS/gistfile1.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Vendors/ngPrint/ngPrint.min.js",
+    "inputFiles": [
+      "Content/Vendors/ngPrint/ngPrint.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Vendors/ngPrint/ngPrint.min.css",
+    "inputFiles": [
+      "Content/Vendors/ngPrint/ngPrint.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/BaoCao/BaoCaoBanHang/BaoCaoBanHang.min.html",
+    "inputFiles": [
+      "Scripts/Admin/BaoCao/BaoCaoBanHang/BaoCaoBanHang.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/BaoCao/BaoCaoBanHang/baocaobanhangController.min.js",
+    "inputFiles": [
+      "Scripts/Admin/BaoCao/BaoCaoBanHang/baocaobanhangController.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/BanHang/BanHangLe.min.html",
+    "inputFiles": [
+      "Scripts/Admin/BanHang/BanHangLe.html"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Admin/Kho/NhapHang/NhapHang.min.html",
+    "inputFiles": [
+      "Scripts/Admin/Kho/NhapHang/NhapHang.html"
+    ]
+  }
+]

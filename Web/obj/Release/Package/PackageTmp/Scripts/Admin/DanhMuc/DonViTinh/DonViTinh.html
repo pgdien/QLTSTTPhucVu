@@ -1,0 +1,84 @@
+﻿<div class="panel panel-default" ng-controller="donvitinhController">
+    <div class="panel-heading">
+        <h3 class="panel-title">Đơn vị tính - Đơn vị thời gian</h3>
+    </div>
+    <div class="panel-body">
+        <span us-spinner="{radius:15, width:4, length: 8}"></span>
+        <!--Đơn vị tính-->
+        <div class="col-md-6 col-sm-6 col-xs-12" id="donvitinh">
+            <div id="gridContainer" dx-data-grid="gridDonViTinhs"></div>
+            <div dx-context-menu="contextMenuDonViTinh"></div>
+        </div>
+        <!--Đơn vị thời gian-->
+        <div class="col-md-6 col-sm-6 col-xs-12" id="donviThoiGian">
+            <div id="gridContainer" dx-data-grid="gridDonViThoiGians"></div>
+            <div dx-context-menu="contextMenuDonViThoiGian"></div>
+        </div>
+
+        <!--ĐƠN VỊ TÍNH-->
+        <!--Popup Modify-->
+        <div class="popup" dx-popup="popupModifyDonViTinh">
+            <div data-options="dxTemplate: { name:'templateModifyDonViTinh' }">
+                <form ng-submit="SaveDonViTinh($event)" dx-validation-group="{donvitinh}">
+                    <div class="row">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <div class="dx-field">
+                                <label>Tên <span class="text-danger" title="Vui lòng nhập trường này" data-toggle="tooltip">(*)</span></label>
+                                <div dx-text-box="controlDonViTinh.ten"
+                                     dx-validator="{validationRules:[{type: 'required', message: 'Nhập tên Đơn vị tính'}]}"></div>
+                            </div>
+                        </div>
+                        <div dx-validation-summary="{donvitinh}"></div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="pull-left" dx-button="{ text: 'Lưu', icon: 'floppy', type: 'success', useSubmitBehavior: true }"></div>
+                        <div class="pull-right" dx-button="{ text: 'Hủy bỏ', icon: 'clear', onClick: CancelSaveDonViTinh, type: 'danger' }"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Popup Delete-->
+        <div class="popup" dx-popup="popupDeleteDonViTinh">
+            <div data-options="dxTemplate: { name:'templateDeleteDonViTinh' }">
+                <div style="text-align: center">Bạn có chắc chắn muốn xóa?</div>
+                <br />
+                <div dx-button="{ text: 'Có', icon: 'floppy', onClick: ConfirmDeleteDonViTinh, type: 'success' }"></div>
+                <div dx-button="{ text: 'Không', icon: 'clear', onClick: CancelDeleteDonViTinh, type: 'danger' }"></div>
+            </div>
+        </div>
+
+        <!--ĐƠN VỊ THỜI GIAN-->
+        <!--Popup Modify-->
+        <div class="popup" dx-popup="popupModifyDonViThoiGian">
+            <div data-options="dxTemplate: { name:'templateModifyDonViThoiGian' }">
+                <form ng-submit="SaveDonViThoiGian($event)" dx-validation-group="{donviThoiGian}">
+                    <div class="row">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <div class="dx-field">
+                                <label>Tên <span class="text-danger" title="Vui lòng nhập trường này" data-toggle="tooltip">(*)</span></label>
+                                <div dx-text-box="controlDonViThoiGian.ten"
+                                     dx-validator="{validationRules:[{type: 'required', message: 'Nhập tên Đơn vị thời gian'}]}"></div>
+                            </div>
+                        </div>
+                        <div dx-validation-summary="{donviThoiGian}"></div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="pull-left" dx-button="{ text: 'Lưu', icon: 'floppy', type: 'success', useSubmitBehavior: true }"></div>
+                        <div class="pull-right" dx-button="{ text: 'Hủy bỏ', icon: 'clear', onClick: CancelSaveDonViThoiGian, type: 'danger' }"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Popup Delete-->
+        <div class="popup" dx-popup="popupDeleteDonViThoiGian">
+            <div data-options="dxTemplate: { name:'templateDeleteDonViThoiGian' }">
+                <div style="text-align: center">Bạn có chắc chắn muốn xóa?</div>
+                <br />
+                <div dx-button="{ text: 'Có', icon: 'floppy', onClick: ConfirmDeleteDonViThoiGian, type: 'success' }"></div>
+                <div dx-button="{ text: 'Không', icon: 'clear', onClick: CancelDeleteDonViThoiGian, type: 'danger' }"></div>
+            </div>
+        </div>
+    </div>
+</div>

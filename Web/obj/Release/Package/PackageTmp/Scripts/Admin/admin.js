@@ -1,0 +1,1 @@
+﻿var admin = angular.module('admin', ['ngRoute', 'ngLoadingSpinner', 'fcsa-number', 'dx', 'ngPrint', 'io-barcode']);

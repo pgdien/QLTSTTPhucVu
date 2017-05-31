@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Karaoke2017ModelStoreContainer" CdmEntityContainer="Karaoke2017Entities">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="Karaoke2017Model.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="Karaoke2017Model.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="Karaoke2017Model.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserRoles">
+      <EntityTypeMapping TypeName="Karaoke2017Model.AspNetUserRoles">
+        <MappingFragment StoreEntitySet="AspNetUserRoles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="Karaoke2017Model.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="GoogleAuthenticatorSecretKey" ColumnName="GoogleAuthenticatorSecretKey" />
+          <ScalarProperty Name="IsGoogleAuthenticatorEnabled" ColumnName="IsGoogleAuthenticatorEnabled" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Ban">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_Ban">
+        <MappingFragment StoreEntitySet="DM_Ban">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="idKhuVuc" ColumnName="idKhuVuc" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_DonViTinh">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_DonViTinh">
+        <MappingFragment StoreEntitySet="DM_DonViTinh">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_DonViThoiGian">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_DonViThoiGian">
+        <MappingFragment StoreEntitySet="DM_DonViThoiGian">
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_KhachHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_KhachHang">
+        <MappingFragment StoreEntitySet="DM_KhachHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="masoThue" ColumnName="masoThue" />
+          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+          <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Kho">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_Kho">
+        <MappingFragment StoreEntitySet="DM_Kho">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_KhuVuc">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_KhuVuc">
+        <MappingFragment StoreEntitySet="DM_KhuVuc">
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LoaiHoaDonBanHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_LoaiHoaDonBanHang">
+        <MappingFragment StoreEntitySet="DM_LoaiHoaDonBanHang">
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LyDoChi">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoChi">
+        <MappingFragment StoreEntitySet="DM_LyDoChi">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LyDoHuyBan">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoHuyBan">
+        <MappingFragment StoreEntitySet="DM_LyDoHuyBan">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LyDoHuyDatBan">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoHuyDatBan">
+        <MappingFragment StoreEntitySet="DM_LyDoHuyDatBan">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LyDoNhap">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoNhap">
+        <MappingFragment StoreEntitySet="DM_LyDoNhap">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LyDoThu">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoThu">
+        <MappingFragment StoreEntitySet="DM_LyDoThu">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_LyDoXuat">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoXuat">
+        <MappingFragment StoreEntitySet="DM_LyDoXuat">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_MatHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_MatHang">
+        <MappingFragment StoreEntitySet="DM_MatHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ton" ColumnName="ton" />
+          <ScalarProperty Name="tonToiThieu" ColumnName="tonToiThieu" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="donvitinh" ColumnName="donvitinh" />
+          <ScalarProperty Name="idNhomMatHang" ColumnName="idNhomMatHang" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NhaCungCap">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhaCungCap">
+        <MappingFragment StoreEntitySet="DM_NhaCungCap">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="masoThue" ColumnName="masoThue" />
+          <ScalarProperty Name="congty" ColumnName="congty" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NhanVienPhucVu">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhanVienPhucVu">
+        <MappingFragment StoreEntitySet="DM_NhanVienPhucVu">
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="ngayVaoLam" ColumnName="ngayVaoLam" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="tenHoaDon" ColumnName="tenHoaDon" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NhaSanXuat">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhaSanXuat">
+        <MappingFragment StoreEntitySet="DM_NhaSanXuat">
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NhomKhachHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhomKhachHang">
+        <MappingFragment StoreEntitySet="DM_NhomKhachHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NhomMatHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhomMatHang">
+        <MappingFragment StoreEntitySet="DM_NhomMatHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_NhomThucDon">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhomThucDon">
+        <MappingFragment StoreEntitySet="DM_NhomThucDon">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_ThucDon">
+      <EntityTypeMapping TypeName="Karaoke2017Model.DM_ThucDon">
+        <MappingFragment StoreEntitySet="DM_ThucDon">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+          <ScalarProperty Name="huongdan" ColumnName="huongdan" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="donvitinh" ColumnName="donvitinh" />
+          <ScalarProperty Name="idNhomThucDon" ColumnName="idNhomThucDon" />
+          <ScalarProperty Name="mavach" ColumnName="mavach" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KT_ChiTietNhapHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.KT_ChiTietNhapHang">
+        <MappingFragment StoreEntitySet="KT_ChiTietNhapHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="giamgia" ColumnName="giamgia" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="idMatHang" ColumnName="idMatHang" />
+          <ScalarProperty Name="idNhapHang" ColumnName="idNhapHang" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KT_ChiTietXuatHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.KT_ChiTietXuatHang">
+        <MappingFragment StoreEntitySet="KT_ChiTietXuatHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="giamgia" ColumnName="giamgia" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+          <ScalarProperty Name="idMatHang" ColumnName="idMatHang" />
+          <ScalarProperty Name="idXuatHang" ColumnName="idXuatHang" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KT_DinhLuong">
+      <EntityTypeMapping TypeName="Karaoke2017Model.KT_DinhLuong">
+        <MappingFragment StoreEntitySet="KT_DinhLuong">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="idMatHang" ColumnName="idMatHang" />
+          <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KT_NhapHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.KT_NhapHang">
+        <MappingFragment StoreEntitySet="KT_NhapHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+          <ScalarProperty Name="giamGia" ColumnName="giamGia" />
+          <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="nguoiNhan" ColumnName="nguoiNhan" />
+          <ScalarProperty Name="idNhaCungCap" ColumnName="idNhaCungCap" />
+          <ScalarProperty Name="idLyDoNhap" ColumnName="idLyDoNhap" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KT_NhapNguyenLieu">
+      <EntityTypeMapping TypeName="Karaoke2017Model.KT_NhapNguyenLieu">
+        <MappingFragment StoreEntitySet="KT_NhapNguyenLieu">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+          <ScalarProperty Name="giamGia" ColumnName="giamGia" />
+          <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="idLyDoNhap" ColumnName="idLyDoNhap" />
+          <ScalarProperty Name="nguoiNhan" ColumnName="nguoiNhan" />
+          <ScalarProperty Name="nguoiGiao" ColumnName="nguoiGiao" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KT_PhieuChi">
+      <EntityTypeMapping TypeName="Karaoke2017Model.KT_PhieuChi">
+        <MappingFragment StoreEntitySet="KT_PhieuChi">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="nguoiNhan" ColumnName="nguoiNhan" />
+          <ScalarProperty Name="chungtuKemTheo" ColumnName="chungtuKemTheo" />
+          <ScalarProperty Name="sotien" ColumnName="sotien" />
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="idLyDoChi" ColumnName="idLyDoChi" />
+          <ScalarProperty Name="nguoiChi" ColumnName="nguoiChi" />
+          <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KT_PhieuThu">
+      <EntityTypeMapping TypeName="Karaoke2017Model.KT_PhieuThu">
+        <MappingFragment StoreEntitySet="KT_PhieuThu">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="nguoiNop" ColumnName="nguoiNop" />
+          <ScalarProperty Name="chungtuKemTheo" ColumnName="chungtuKemTheo" />
+          <ScalarProperty Name="sotien" ColumnName="sotien" />
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="idLyDoThu" ColumnName="idLyDoThu" />
+          <ScalarProperty Name="nguoiThu" ColumnName="nguoiThu" />
+          <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KT_XuatHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.KT_XuatHang">
+        <MappingFragment StoreEntitySet="KT_XuatHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+          <ScalarProperty Name="giamGia" ColumnName="giamGia" />
+          <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="nguoiXuat" ColumnName="nguoiXuat" />
+          <ScalarProperty Name="idLyDoXuat" ColumnName="idLyDoXuat" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KT_XuatNguyenLieu">
+      <EntityTypeMapping TypeName="Karaoke2017Model.KT_XuatNguyenLieu">
+        <MappingFragment StoreEntitySet="KT_XuatNguyenLieu">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+          <ScalarProperty Name="giamGia" ColumnName="giamGia" />
+          <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="nguoiNhan" ColumnName="nguoiNhan" />
+          <ScalarProperty Name="nguoiXuat" ColumnName="nguoiXuat" />
+          <ScalarProperty Name="idLyDoXuat" ColumnName="idLyDoXuat" />
+          <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_ChiTietChuyenBan">
+      <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ChiTietChuyenBan">
+        <MappingFragment StoreEntitySet="ORDER_ChiTietChuyenBan">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+          <ScalarProperty Name="idChuyenBan" ColumnName="idChuyenBan" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_ChiTietDatBan">
+      <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ChiTietDatBan">
+        <MappingFragment StoreEntitySet="ORDER_ChiTietDatBan">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="lai" ColumnName="lai" />
+          <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+          <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="giaVon" ColumnName="giaVon" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="idDatBan" ColumnName="idDatBan" />
+          <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_ChiTietHoaDonBanHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ChiTietHoaDonBanHang">
+        <MappingFragment StoreEntitySet="ORDER_ChiTietHoaDonBanHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="lai" ColumnName="lai" />
+          <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="giaVon" ColumnName="giaVon" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="idHoaDonBanHang" ColumnName="idHoaDonBanHang" />
+          <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_ChiTietNhanVienHoaDonBanHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ChiTietNhanVienHoaDonBanHang">
+        <MappingFragment StoreEntitySet="ORDER_ChiTietNhanVienHoaDonBanHang">
+          <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="thoigianRa" ColumnName="thoigianRa" />
+          <ScalarProperty Name="thoigianVao" ColumnName="thoigianVao" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="idHoaDonBanHang" ColumnName="idHoaDonBanHang" />
+          <ScalarProperty Name="idNhanVienPhucVu" ColumnName="idNhanVienPhucVu" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_ChuyenBan">
+      <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ChuyenBan">
+        <MappingFragment StoreEntitySet="ORDER_ChuyenBan">
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="isChuyenHet" ColumnName="isChuyenHet" />
+          <ScalarProperty Name="idDenBan" ColumnName="idDenBan" />
+          <ScalarProperty Name="idHoaDonDenBan" ColumnName="idHoaDonDenBan" />
+          <ScalarProperty Name="idTuBan" ColumnName="idTuBan" />
+          <ScalarProperty Name="idHoaDonTuBan" ColumnName="idHoaDonTuBan" />
+          <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_DatBan">
+      <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_DatBan">
+        <MappingFragment StoreEntitySet="ORDER_DatBan">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="thanhtoanDuKien" ColumnName="thanhtoanDuKien" />
+          <ScalarProperty Name="vatDuKienPhanTram" ColumnName="vatDuKienPhanTram" />
+          <ScalarProperty Name="vatDuKienTien" ColumnName="vatDuKienTien" />
+          <ScalarProperty Name="giamDuKienPhanTram" ColumnName="giamDuKienPhanTram" />
+          <ScalarProperty Name="giamDuKienTien" ColumnName="giamDuKienTien" />
+          <ScalarProperty Name="tongTienDuKien" ColumnName="tongTienDuKien" />
+          <ScalarProperty Name="idLyDoHuy" ColumnName="idLyDoHuy" />
+          <ScalarProperty Name="isHuy" ColumnName="isHuy" />
+          <ScalarProperty Name="isToi" ColumnName="isToi" />
+          <ScalarProperty Name="thoigianToi" ColumnName="thoigianToi" />
+          <ScalarProperty Name="thoigianHenToi" ColumnName="thoigianHenToi" />
+          <ScalarProperty Name="thoigianDatBan" ColumnName="thoigianDatBan" />
+          <ScalarProperty Name="soKhach" ColumnName="soKhach" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="idBan" ColumnName="idBan" />
+          <ScalarProperty Name="idKhachHang" ColumnName="idKhachHang" />
+          <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_GhepBan">
+      <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_GhepBan">
+        <MappingFragment StoreEntitySet="ORDER_GhepBan">
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="idDenban" ColumnName="idDenban" />
+          <ScalarProperty Name="idTuBan" ColumnName="idTuBan" />
+          <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_HoaDonBanHang">
+      <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_HoaDonBanHang">
+        <MappingFragment StoreEntitySet="ORDER_HoaDonBanHang">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="tienVon" ColumnName="tienVon" />
+          <ScalarProperty Name="tienle" ColumnName="tienle" />
+          <ScalarProperty Name="thucthu" ColumnName="thucthu" />
+          <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+          <ScalarProperty Name="isThanhToan" ColumnName="isThanhToan" />
+          <ScalarProperty Name="vatPhanTram" ColumnName="vatPhanTram" />
+          <ScalarProperty Name="vatTien" ColumnName="vatTien" />
+          <ScalarProperty Name="giamPhanTram" ColumnName="giamPhanTram" />
+          <ScalarProperty Name="giamTien" ColumnName="giamTien" />
+          <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+          <ScalarProperty Name="tienNhanVien" ColumnName="tienNhanVien" />
+          <ScalarProperty Name="tienDo" ColumnName="tienDo" />
+          <ScalarProperty Name="lydoHuy" ColumnName="lydoHuy" />
+          <ScalarProperty Name="isHuy" ColumnName="isHuy" />
+          <ScalarProperty Name="tienGio" ColumnName="tienGio" />
+          <ScalarProperty Name="dongiaPhong" ColumnName="dongiaPhong" />
+          <ScalarProperty Name="tongThoiGian" ColumnName="tongThoiGian" />
+          <ScalarProperty Name="thoigianRa" ColumnName="thoigianRa" />
+          <ScalarProperty Name="thoigianVao" ColumnName="thoigianVao" />
+          <ScalarProperty Name="soKhach" ColumnName="soKhach" />
+          <ScalarProperty Name="idBan" ColumnName="idBan" />
+          <ScalarProperty Name="idDatBan" ColumnName="idDatBan" />
+          <ScalarProperty Name="idKhachHang" ColumnName="idKhachHang" />
+          <ScalarProperty Name="nhanvien" ColumnName="nhanvien" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

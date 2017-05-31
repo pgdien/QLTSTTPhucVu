@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>Quản lý Bán thuốc</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!--BOOTSTRAP-->
+    <link href="~/Content/Templates/Joli/css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+
+    <!--TOAST-->
+    <link href="~/Content/Vendors/toastr/toastr.min.css" rel="stylesheet" />
+
+    <!--FONTAWESOME-->
+    <link href="~/Content/Vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    
+
+    <!--DEVEXTREME-->
+    <link href="~/Content/Devextreme/Lib/css/dx.spa.css" rel="stylesheet" />
+    <link href="~/Content/Devextreme/Lib/css/dx.common.css" rel="stylesheet" />
+    <link href="~/Content/Devextreme/Lib/css/generic.light.custom.min.css" rel="stylesheet" />
+    @*<link href="~/Content/Devextreme/Lib/css/dx.light.css" rel="stylesheet" />*@
+
+    <!--NgPrint-->
+    <link href="~/Content/Vendors/ngPrint/ngPrint.min.css" rel="stylesheet" />
+
+    <!-- CSS INCLUDE -->
+    <link href="~/Content/Templates/Joli/css/theme-default.css" rel="stylesheet" />
+    <link href="~/Content/MyCSS/customize-dx.min.css" rel="stylesheet" />
+
+    <meta name="description" content="Phần mềm Quản lý Karaoke" />
+    
+    <link href="~/Content/MyCSS/gistfile1.min.css" rel="stylesheet" />
+</head>
+<body ng-app="admin">
+    <!-- START PAGE CONTAINER -->
+    <div class="page-container">
+
+        <!-- PAGE SIDEBAR -->
+        <div class="page-sidebar">
+            <!-- X-NAVIGATION -->
+            <ul class="x-navigation">
+                <li class="xn-logo">
+                    <a href="#">B-POS PRO</a>
+                    <a href="#" class="x-navigation-control"></a>
+                </li>
+                @*<li class="xn-title">Navigation</li>*@
+                @*<li>
+                    <a href="/#!/dashboard"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
+                </li>*@
+                <li>
+                    <a href="/#!/ban-hang"><span class="fa fa-microphone"></span> <span class="xn-text">Bán hàng</span></a>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Danh mục</span></a>
+                    <ul>
+                        <li><a href="/#!/ban"><span class="fa fa-circle"></span> Quầy - Khu vực</a></li>
+                        <li><a href="/#!/don-vi-tinh"><span class="fa fa-circle"></span> Đơn vị Tính - Thời gian</a></li>
+                        <li><a href="/#!/khach-hang"><span class="fa fa-circle"></span> Khách hàng</a></li>
+                        <li><a href="/#!/nha-cung-cap"><span class="fa fa-circle"></span> Nhà cung cấp</a></li>
+                        @*<li><a href="/#!/nhan-vien-phuc-vu"><span class="fa fa-circle"></span> Nhân viên phục vụ</a></li>*@
+                    </ul>
+                </li>
+                <li>
+                    <a href="/#!/thuoc-don"><span class="fa fa-cutlery"></span> <span class="xn-text">Thuốc đơn</span></a>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-server"></span> <span class="xn-text">Kho</span></a>
+                    <ul>
+                        <li><a href="/#!/mat-hang"><span class="fa fa-circle"></span> Mặt hàng</a></li>
+                        <li><a href="/#!/nhap-hang"><span class="fa fa-circle"></span> Nhập hàng</a></li>
+                        <li><a href="/#!/xuat-hang"><span class="fa fa-circle"></span> Xuất hàng</a></li>
+                    </ul>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-bar-chart"></span> <span class="xn-text">Báo cáo</span></a>
+                    <ul>
+                        <li><a href="/#!/bao-cao-ban-hang"><span class="fa fa-circle"></span> Báo cáo bán hàng</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- X-NAVIGATION -->
+        </div>
+        <!-- /PAGE SIDEBAR -->
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+
+            <!-- X-NAVIGATION VERTICAL -->
+            <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                <!-- TOGGLE NAVIGATION -->
+                <li class="xn-icon-button">
+                    <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                </li>
+                <!-- /TOGGLE NAVIGATION -->
+            </ul>
+            <!-- X-NAVIGATION VERTICAL -->
+            <!-- START BREADCRUMB -->
+            @*<ul class="breadcrumb">
+                    <li><a href="#">Link</a></li>
+                    <li class="active">Active</li>
+                </ul>*@
+            <!-- END BREADCRUMB -->
+            @*<div class="page-title">
+                    <h2><span class="fa fa-arrow-circle-o-left"></span> Page Title</h2>
+                </div>*@
+
+            <!-- PAGE CONTENT WRAPPER -->
+            <div class="page-content-wrap">
+                <div class="row">
+                    <div class="col-md-12" style="margin:0px; padding: 0px;">
+                        @RenderBody()
+                    </div>
+                </div>
+
+            </div>
+            <!-- /PAGE CONTENT WRAPPER -->
+        </div>
+        <!-- /PAGE CONTENT -->
+    </div>
+    <!-- /PAGE CONTAINER -->
+    <!-- MESSAGE BOX-->
+    <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+        <div class="mb-container">
+            <div class="mb-middle">
+                <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                <div class="mb-content">
+                    <p>Are you sure you want to log out?</p>
+                    <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                </div>
+                <div class="mb-footer">
+                    <div class="pull-right">
+                        <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                        <button class="btn btn-default btn-lg mb-control-close">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MESSAGE BOX-->
+    <!-- START SCRIPTS -->
+    @RenderSection("scripts", required: false)
+
+
+    <!-- PLUGINS -->
+    <script type="text/javascript" src="~/Content/Templates/Joli/js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/Templates/Joli/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/Content/Templates/Joli/js/plugins/bootstrap/bootstrap.min.js"></script>
+
+    <!--PAGE PLUGINS-->
+    <script src="~/Content/Templates/Joli/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script src="~/Content/Templates/Joli/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+
+    <!-- TEMPLATE -->
+    <script type="text/javascript" src="~/Content/Templates/Joli/js/plugins.js"></script>
+    <script type="text/javascript" src="~/Content/Templates/Joli/js/actions.js"></script>
+
+    <!--DEVEXTREME-->
+    <script src="~/Content/Devextreme/Lib/js/jszip.min.js"></script>
+
+    <!--ANGULARJS-->
+    <script src="~/Content/Vendors/angular-1.6.3/angular.min.js"></script>
+    <script src="~/Content/Vendors/angular-1.6.3/angular-sanitize.min.js"></script>
+    <script src="~/Content/Vendors/angular-1.6.3/angular-route.min.js"></script>
+    <script src="~/Content/Vendors/angular-1.6.3/angular-touch.min.js"></script>
+
+    <!--NG-PRINT-->
+    <script src="~/Content/Vendors/ngPrint/ngPrint.min.js"></script>
+
+    <!--TOAST-->
+    <script type="text/javascript" src="~/Content/Vendors/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.options = {
+                "positionClass": "toast-bottom-right",
+                "timeOut": "1500",
+                "progressBar": true
+            };
+        });
+    </script>
+
+    <!--LOADING SPINNER-->
+    <script src="~/Content/Vendors/loading-spinner/spin.min.js"></script>
+    <script src="~/Content/Vendors/loading-spinner/angular-spinner.min.js"></script>
+    <script src="~/Content/Vendors/loading-spinner/angular-loading-spinner.js"></script>
+
+    <!--FCSA-NUMBER FORMAT TEXTBOX-->
+    <script src="~/Content/Vendors/fcsa-number/fcsaNumber.min.js"></script>
+
+    <!--DEVEXTREME-->
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/cldr.min.js"></script>
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/cldr/event.min.js"></script>
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/cldr/supplemental.min.js"></script>
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/cldr/unresolved.min.js"></script>
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/globalize.min.js"></script>
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/globalize/message.min.js"></script>
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/globalize/number.min.js"></script>
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/globalize/currency.min.js"></script>
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/globalize/date.min.js"></script>
+    <script type="text/javascript" src="~/Content/Devextreme/Lib/js/dx.all.js"></script>
+
+    <!--ADMIN-->
+    <script src="~/Scripts/Admin/admin.js"></script>
+    <script src="~/Scripts/Admin/routing.js"></script>
+
+    <!--io-barcode-->
+    <script src="~/Scripts/io-barcode/angular-io-barcode.min.js"></script>
+
+    <!--Dashboard-->
+    <script src="~/Scripts/Admin/Dashboard/dashboardController.min.js"></script>
+
+    <!--Bán hàng-->
+    <script src="~/Scripts/Admin/BanHang/banhangController.min.js"></script>
+
+    <!--Danh mục-->
+    <script src="~/Scripts/Admin/DanhMuc/Ban/banController.min.js"></script>
+    <script src="~/Scripts/Admin/DanhMuc/DonViTinh/DonViTinhController.min.js"></script>
+    <script src="~/Scripts/Admin/DanhMuc/KhachHang/khachhangController.min.js"></script>
+    <script src="~/Scripts/Admin/DanhMuc/NhaCungCap/nhacungcapController.min.js"></script>
+    <script src="~/Scripts/Admin/DanhMuc/NhanVienPhucVu/nhanvienphucvuController.min.js"></script>
+
+    <!--Kho-->
+    <script src="~/Scripts/Admin/Kho/MatHang/mathangController.min.js"></script>
+    <script src="~/Scripts/Admin/Kho/NhapHang/nhaphangController.min.js"></script>
+    <script src="~/Scripts/Admin/Kho/XuatHang/xuathangController.min.js"></script>
+
+
+    <!--Thực đơn-->
+    <script src="~/Scripts/Admin/ThucDon/thucdonController.min.js"></script>
+
+    <!--Báo cáo-->
+    <script src="~/Scripts/Admin/BaoCao/BaoCaoBanHang/baocaobanhangController.min.js"></script>
+
+    <!-- END SCRIPTS -->
+</body>
+</html>
+
+
+

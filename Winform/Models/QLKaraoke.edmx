@@ -1,0 +1,2019 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Karaoke2017Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="IsGoogleAuthenticatorEnabled" Type="bit" Nullable="false" />
+          <Property Name="GoogleAuthenticatorSecretKey" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BH_ChiTietBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idHoaDonBanHang" Type="int" />
+          <Property Name="idHangHoa" Type="int" />
+          <Property Name="dongia" Type="float" />
+          <Property Name="giaVon" Type="float" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="thanhtien" Type="float" />
+          <Property Name="ghichu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BH_ChiTietTraHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTraHang" Type="int" />
+          <Property Name="idThucDon" Type="int" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="giaGoc" Type="float" />
+          <Property Name="giaNhapLai" Type="float" />
+          <Property Name="lai" Type="float" />
+        </EntityType>
+        <EntityType Name="BH_HoaDonBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idLoaiHoaDonBanHang" Type="int" />
+          <Property Name="idKhachHang" Type="int" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="thoigian" Type="datetime" />
+          <Property Name="hinhanh" Type="nvarchar(max)" />
+          <Property Name="tongTien" Type="float" />
+          <Property Name="giamgia" Type="float" />
+          <Property Name="thanhtoan" Type="float" />
+          <Property Name="daThanhToan" Type="int" />
+          <Property Name="ghichu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BH_TraHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idKhachHang" Type="int" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="thoigian" Type="datetime" />
+          <Property Name="tongTienGoc" Type="float" />
+          <Property Name="tongTienTraLai" Type="float" />
+          <Property Name="tongLai" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_Ban">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idKhuVuc" Type="int" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="trangthai" Type="bit" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_DonViTinh">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_HanSuDung">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_KhachHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="dienthoai" Type="varchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="250" />
+          <Property Name="email" Type="varchar" MaxLength="250" />
+          <Property Name="gioitinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysinh" Type="date" />
+          <Property Name="masoThue" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_Kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_KhuVuc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_LoaiHoaDonBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_LyDoChi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_LyDoHuyBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_LyDoHuyDatBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_LyDoNhap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_LyDoThu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_LyDoXuat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_NhaCungCap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="dienthoai" Type="varchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="250" />
+          <Property Name="email" Type="varchar" MaxLength="250" />
+          <Property Name="congty" Type="nvarchar" MaxLength="250" />
+          <Property Name="masoThue" Type="varchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_NhaSanXuat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_NhomHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma" Type="varchar" MaxLength="50" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_NhomKhachHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="DM_NhomNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_ChiTietNhapHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhapHang" Type="int" />
+          <Property Name="idHangHoa" Type="int" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="dongia" Type="float" />
+          <Property Name="giamgia" Type="float" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="thanhtien" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_ChiTietNhapNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhapNguyenLieu" Type="int" />
+          <Property Name="idNguyenLieu" Type="int" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="dongia" Type="float" />
+          <Property Name="giamgia" Type="float" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="thanhtien" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_ChiTietXuatHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idXuatHang" Type="int" />
+          <Property Name="idHangHoa" Type="int" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="dongia" Type="float" />
+          <Property Name="giamgia" Type="float" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="thanhtien" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_ChiTietXuatNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idXuatNguyenLieu" Type="int" />
+          <Property Name="idNguyenLieu" Type="int" />
+          <Property Name="dongia" Type="float" />
+          <Property Name="giamgia" Type="float" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="thanhtien" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_HangHoa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mavach" Type="varchar" MaxLength="9" StoreGeneratedPattern="Computed" />
+          <Property Name="ma" Type="varchar" MaxLength="50" />
+          <Property Name="idNhaSanXuat" Type="int" />
+          <Property Name="idNhomHang" Type="int" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="giaSi" Type="float" />
+          <Property Name="giaLe" Type="float" />
+          <Property Name="giaVon" Type="float" />
+          <Property Name="hanSuDung" Type="float" />
+          <Property Name="idHanSuDung" Type="int" />
+          <Property Name="mota" Type="nvarchar" MaxLength="250" />
+          <Property Name="soluong" Type="float" Nullable="false" />
+          <Property Name="tonToiThieu" Type="float" />
+          <Property Name="hinhanh" Type="nvarchar" MaxLength="250" />
+          <Property Name="ngungKinhDoanh" Type="bit" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_NguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma" Type="varchar" MaxLength="50" />
+          <Property Name="idNhomNguyenLieu" Type="int" />
+          <Property Name="ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="tonToiThieu" Type="float" />
+          <Property Name="hanSuDung" Type="float" />
+          <Property Name="idHanSuDung" Type="int" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_NhapHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idLyDoNhap" Type="int" />
+          <Property Name="nguoiGiao" Type="nvarchar" MaxLength="250" />
+          <Property Name="nguoiNhan" Type="nvarchar" MaxLength="250" />
+          <Property Name="thoigian" Type="datetime" />
+          <Property Name="tongTien" Type="float" />
+          <Property Name="giamGia" Type="float" />
+          <Property Name="thanhtoan" Type="float" />
+          <Property Name="ghichu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="KT_NhapNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nguoiGiao" Type="nvarchar" MaxLength="250" />
+          <Property Name="nguoiNhan" Type="nvarchar" MaxLength="250" />
+          <Property Name="idLyDoNhap" Type="int" />
+          <Property Name="thoigian" Type="datetime" />
+          <Property Name="tongTien" Type="float" />
+          <Property Name="giamGia" Type="float" />
+          <Property Name="thanhtoan" Type="float" />
+          <Property Name="ghichu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="KT_PhieuChi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="nguoiChi" Type="nvarchar" MaxLength="250" />
+          <Property Name="idLyDoChi" Type="int" />
+          <Property Name="thoigian" Type="datetime" />
+          <Property Name="sotien" Type="float" />
+          <Property Name="chungtuKemTheo" Type="varchar" MaxLength="250" />
+          <Property Name="nguoiNhan" Type="nvarchar" MaxLength="250" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="250" />
+          <Property Name="sdt" Type="varchar" MaxLength="50" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_PhieuThu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="nguoiThu" Type="nvarchar" MaxLength="250" />
+          <Property Name="idLyDoThu" Type="int" />
+          <Property Name="thoigian" Type="datetime" />
+          <Property Name="sotien" Type="float" />
+          <Property Name="chungtuKemTheo" Type="varchar" MaxLength="250" />
+          <Property Name="nguoiNop" Type="nvarchar" MaxLength="250" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="250" />
+          <Property Name="sdt" Type="varchar" MaxLength="50" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_XuatHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="idLyDoXuat" Type="int" />
+          <Property Name="nguoiXuat" Type="nvarchar" MaxLength="250" />
+          <Property Name="nguoiNhan" Type="nvarchar" MaxLength="250" />
+          <Property Name="thoigian" Type="datetime" />
+          <Property Name="tongTien" Type="float" />
+          <Property Name="giamGia" Type="float" />
+          <Property Name="thanhtoan" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KT_XuatNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="idLyDoXuat" Type="int" />
+          <Property Name="nguoiXuat" Type="nvarchar" MaxLength="250" />
+          <Property Name="nguoiNhan" Type="nvarchar" MaxLength="250" />
+          <Property Name="thoigian" Type="datetime" />
+          <Property Name="tongTien" Type="float" />
+          <Property Name="giamGia" Type="float" />
+          <Property Name="thanhtoan" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ORDER_ChiTietChuyenBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idChuyenBan" Type="int" />
+          <Property Name="idThucDon" Type="int" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ORDER_ChiTietDatBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idThucDon" Type="int" />
+          <Property Name="idDatBan" Type="int" />
+          <Property Name="dongia" Type="float" />
+          <Property Name="giaVon" Type="float" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="thanhtien" Type="float" />
+          <Property Name="lai" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ORDER_ChiTietHoaDonBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idThucDon" Type="int" />
+          <Property Name="idHoaDonBanHang" Type="int" />
+          <Property Name="dongia" Type="float" />
+          <Property Name="giaVon" Type="float" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="thanhtien" Type="float" />
+          <Property Name="lai" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ORDER_ChuyenBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="idHoaDonTuBan" Type="int" />
+          <Property Name="idTuBan" Type="int" />
+          <Property Name="idHoaDonDenBan" Type="int" />
+          <Property Name="idDenBan" Type="int" />
+          <Property Name="isChuyenHet" Type="bit" Nullable="false" />
+          <Property Name="thoigian" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ORDER_DatBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="idKhachHang" Type="int" />
+          <Property Name="idBan" Type="int" />
+          <Property Name="sdt" Type="varchar" MaxLength="50" />
+          <Property Name="soKhach" Type="int" />
+          <Property Name="thoigianDatBan" Type="datetime" />
+          <Property Name="thoigianHenToi" Type="datetime" />
+          <Property Name="thoigianToi" Type="datetime" />
+          <Property Name="isToi" Type="bit" Nullable="false" />
+          <Property Name="isHuy" Type="bit" Nullable="false" />
+          <Property Name="idLyDoHuy" Type="int" />
+          <Property Name="tongTienDuKien" Type="float" />
+          <Property Name="giamDuKienTien" Type="float" />
+          <Property Name="giamDuKienPhanTram" Type="float" />
+          <Property Name="vatDuKienTien" Type="float" />
+          <Property Name="vatDuKienPhanTram" Type="float" />
+          <Property Name="thanhtoanDuKien" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ORDER_GhepBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="nvarchar" MaxLength="250" />
+          <Property Name="idTuBan" Type="int" />
+          <Property Name="idDenban" Type="int" />
+          <Property Name="thoigian" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ORDER_HoaDonBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="nhanvien" Type="nvarchar" MaxLength="250" />
+          <Property Name="idKhachHang" Type="int" />
+          <Property Name="idDatBan" Type="int" />
+          <Property Name="idBan" Type="int" />
+          <Property Name="soKhach" Type="int" />
+          <Property Name="thoigianVao" Type="datetime" />
+          <Property Name="thoigianRa" Type="datetime" />
+          <Property Name="tongThoiGian" Type="float" />
+          <Property Name="isHuy" Type="bit" Nullable="false" />
+          <Property Name="idLyDoHuy" Type="int" />
+          <Property Name="tongTien" Type="float" />
+          <Property Name="giamTien" Type="float" />
+          <Property Name="giamPhanTram" Type="float" />
+          <Property Name="vatTien" Type="float" />
+          <Property Name="vatPhanTram" Type="float" />
+          <Property Name="isThanhToan" Type="bit" />
+          <Property Name="thanhtoan" Type="float" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ORDER_HuyMon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="nvarchar" MaxLength="250" />
+          <Property Name="idHoaDonBanHang" Type="int" />
+          <Property Name="idThucDon" Type="int" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="thoigian" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ORDER_ThemMon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idNhanVien" Type="varchar" MaxLength="250" />
+          <Property Name="idHoaDonBanHang" Type="int" />
+          <Property Name="idThucDon" Type="int" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="idDonViTinh" Type="int" />
+          <Property Name="thoigian" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Karaoke2017ModelStoreContainer">
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BH_ChiTietBanHang" EntityType="Self.BH_ChiTietBanHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BH_ChiTietTraHang" EntityType="Self.BH_ChiTietTraHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BH_HoaDonBanHang" EntityType="Self.BH_HoaDonBanHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BH_TraHang" EntityType="Self.BH_TraHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_Ban" EntityType="Self.DM_Ban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_DonViTinh" EntityType="Self.DM_DonViTinh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_HanSuDung" EntityType="Self.DM_HanSuDung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_KhachHang" EntityType="Self.DM_KhachHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_Kho" EntityType="Self.DM_Kho" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_KhuVuc" EntityType="Self.DM_KhuVuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LoaiHoaDonBanHang" EntityType="Self.DM_LoaiHoaDonBanHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LyDoChi" EntityType="Self.DM_LyDoChi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LyDoHuyBan" EntityType="Self.DM_LyDoHuyBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LyDoHuyDatBan" EntityType="Self.DM_LyDoHuyDatBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LyDoNhap" EntityType="Self.DM_LyDoNhap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LyDoThu" EntityType="Self.DM_LyDoThu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LyDoXuat" EntityType="Self.DM_LyDoXuat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_NhaCungCap" EntityType="Self.DM_NhaCungCap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_NhaSanXuat" EntityType="Self.DM_NhaSanXuat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_NhomHang" EntityType="Self.DM_NhomHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_NhomKhachHang" EntityType="Self.DM_NhomKhachHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_NhomNguyenLieu" EntityType="Self.DM_NhomNguyenLieu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_ChiTietNhapHang" EntityType="Self.KT_ChiTietNhapHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_ChiTietNhapNguyenLieu" EntityType="Self.KT_ChiTietNhapNguyenLieu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_ChiTietXuatHang" EntityType="Self.KT_ChiTietXuatHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_ChiTietXuatNguyenLieu" EntityType="Self.KT_ChiTietXuatNguyenLieu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_HangHoa" EntityType="Self.KT_HangHoa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_NguyenLieu" EntityType="Self.KT_NguyenLieu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_NhapHang" EntityType="Self.KT_NhapHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_NhapNguyenLieu" EntityType="Self.KT_NhapNguyenLieu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_PhieuChi" EntityType="Self.KT_PhieuChi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_PhieuThu" EntityType="Self.KT_PhieuThu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_XuatHang" EntityType="Self.KT_XuatHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KT_XuatNguyenLieu" EntityType="Self.KT_XuatNguyenLieu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_ChiTietChuyenBan" EntityType="Self.ORDER_ChiTietChuyenBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_ChiTietDatBan" EntityType="Self.ORDER_ChiTietDatBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_ChiTietHoaDonBanHang" EntityType="Self.ORDER_ChiTietHoaDonBanHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_ChuyenBan" EntityType="Self.ORDER_ChuyenBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_DatBan" EntityType="Self.ORDER_DatBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_GhepBan" EntityType="Self.ORDER_GhepBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_HoaDonBanHang" EntityType="Self.ORDER_HoaDonBanHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_HuyMon" EntityType="Self.ORDER_HuyMon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_ThemMon" EntityType="Self.ORDER_ThemMon" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Karaoke2017Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Karaoke2017Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AspNetUserClaims" EntityType="Karaoke2017Model.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Karaoke2017Model.AspNetUserLogin" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Karaoke2017Model.AspNetUserRole" />
+          <EntitySet Name="AspNetUsers" EntityType="Karaoke2017Model.AspNetUser" />
+          <EntitySet Name="BH_ChiTietBanHang" EntityType="Karaoke2017Model.BH_ChiTietBanHang" />
+          <EntitySet Name="BH_ChiTietTraHang" EntityType="Karaoke2017Model.BH_ChiTietTraHang" />
+          <EntitySet Name="BH_HoaDonBanHang" EntityType="Karaoke2017Model.BH_HoaDonBanHang" />
+          <EntitySet Name="BH_TraHang" EntityType="Karaoke2017Model.BH_TraHang" />
+          <EntitySet Name="DM_Ban" EntityType="Karaoke2017Model.DM_Ban" />
+          <EntitySet Name="DM_DonViTinh" EntityType="Karaoke2017Model.DM_DonViTinh" />
+          <EntitySet Name="DM_HanSuDung" EntityType="Karaoke2017Model.DM_HanSuDung" />
+          <EntitySet Name="DM_KhachHang" EntityType="Karaoke2017Model.DM_KhachHang" />
+          <EntitySet Name="DM_Kho" EntityType="Karaoke2017Model.DM_Kho" />
+          <EntitySet Name="DM_KhuVuc" EntityType="Karaoke2017Model.DM_KhuVuc" />
+          <EntitySet Name="DM_LoaiHoaDonBanHang" EntityType="Karaoke2017Model.DM_LoaiHoaDonBanHang" />
+          <EntitySet Name="DM_LyDoChi" EntityType="Karaoke2017Model.DM_LyDoChi" />
+          <EntitySet Name="DM_LyDoHuyBan" EntityType="Karaoke2017Model.DM_LyDoHuyBan" />
+          <EntitySet Name="DM_LyDoHuyDatBan" EntityType="Karaoke2017Model.DM_LyDoHuyDatBan" />
+          <EntitySet Name="DM_LyDoNhap" EntityType="Karaoke2017Model.DM_LyDoNhap" />
+          <EntitySet Name="DM_LyDoThu" EntityType="Karaoke2017Model.DM_LyDoThu" />
+          <EntitySet Name="DM_LyDoXuat" EntityType="Karaoke2017Model.DM_LyDoXuat" />
+          <EntitySet Name="DM_NhaCungCap" EntityType="Karaoke2017Model.DM_NhaCungCap" />
+          <EntitySet Name="DM_NhaSanXuat" EntityType="Karaoke2017Model.DM_NhaSanXuat" />
+          <EntitySet Name="DM_NhomHang" EntityType="Karaoke2017Model.DM_NhomHang" />
+          <EntitySet Name="DM_NhomKhachHang" EntityType="Karaoke2017Model.DM_NhomKhachHang" />
+          <EntitySet Name="DM_NhomNguyenLieu" EntityType="Karaoke2017Model.DM_NhomNguyenLieu" />
+          <EntitySet Name="KT_ChiTietNhapHang" EntityType="Karaoke2017Model.KT_ChiTietNhapHang" />
+          <EntitySet Name="KT_ChiTietNhapNguyenLieu" EntityType="Karaoke2017Model.KT_ChiTietNhapNguyenLieu" />
+          <EntitySet Name="KT_ChiTietXuatHang" EntityType="Karaoke2017Model.KT_ChiTietXuatHang" />
+          <EntitySet Name="KT_ChiTietXuatNguyenLieu" EntityType="Karaoke2017Model.KT_ChiTietXuatNguyenLieu" />
+          <EntitySet Name="KT_HangHoa" EntityType="Karaoke2017Model.KT_HangHoa" />
+          <EntitySet Name="KT_NguyenLieu" EntityType="Karaoke2017Model.KT_NguyenLieu" />
+          <EntitySet Name="KT_NhapHang" EntityType="Karaoke2017Model.KT_NhapHang" />
+          <EntitySet Name="KT_NhapNguyenLieu" EntityType="Karaoke2017Model.KT_NhapNguyenLieu" />
+          <EntitySet Name="KT_PhieuChi" EntityType="Karaoke2017Model.KT_PhieuChi" />
+          <EntitySet Name="KT_PhieuThu" EntityType="Karaoke2017Model.KT_PhieuThu" />
+          <EntitySet Name="KT_XuatHang" EntityType="Karaoke2017Model.KT_XuatHang" />
+          <EntitySet Name="KT_XuatNguyenLieu" EntityType="Karaoke2017Model.KT_XuatNguyenLieu" />
+          <EntitySet Name="ORDER_ChiTietChuyenBan" EntityType="Karaoke2017Model.ORDER_ChiTietChuyenBan" />
+          <EntitySet Name="ORDER_ChiTietDatBan" EntityType="Karaoke2017Model.ORDER_ChiTietDatBan" />
+          <EntitySet Name="ORDER_ChiTietHoaDonBanHang" EntityType="Karaoke2017Model.ORDER_ChiTietHoaDonBanHang" />
+          <EntitySet Name="ORDER_ChuyenBan" EntityType="Karaoke2017Model.ORDER_ChuyenBan" />
+          <EntitySet Name="ORDER_DatBan" EntityType="Karaoke2017Model.ORDER_DatBan" />
+          <EntitySet Name="ORDER_GhepBan" EntityType="Karaoke2017Model.ORDER_GhepBan" />
+          <EntitySet Name="ORDER_HoaDonBanHang" EntityType="Karaoke2017Model.ORDER_HoaDonBanHang" />
+          <EntitySet Name="ORDER_HuyMon" EntityType="Karaoke2017Model.ORDER_HuyMon" />
+          <EntitySet Name="ORDER_ThemMon" EntityType="Karaoke2017Model.ORDER_ThemMon" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Karaoke2017Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Karaoke2017Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Karaoke2017Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRole" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Karaoke2017Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Karaoke2017Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Karaoke2017Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" FromRole="AspNetUserRole" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="IsGoogleAuthenticatorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="GoogleAuthenticatorSecretKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Karaoke2017Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Karaoke2017Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+          <NavigationProperty Name="AspNetUserRoles" Relationship="Karaoke2017Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserRole" />
+        </EntityType>
+        <EntityType Name="BH_ChiTietBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idHoaDonBanHang" Type="Int32" />
+          <Property Name="idHangHoa" Type="Int32" />
+          <Property Name="dongia" Type="Double" />
+          <Property Name="giaVon" Type="Double" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="thanhtien" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BH_ChiTietTraHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTraHang" Type="Int32" />
+          <Property Name="idThucDon" Type="Int32" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="giaGoc" Type="Double" />
+          <Property Name="giaNhapLai" Type="Double" />
+          <Property Name="lai" Type="Double" />
+        </EntityType>
+        <EntityType Name="BH_HoaDonBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idLoaiHoaDonBanHang" Type="Int32" />
+          <Property Name="idKhachHang" Type="Int32" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+          <Property Name="hinhanh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tongTien" Type="Double" />
+          <Property Name="giamgia" Type="Double" />
+          <Property Name="thanhtoan" Type="Double" />
+          <Property Name="daThanhToan" Type="Int32" />
+          <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BH_TraHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idKhachHang" Type="Int32" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+          <Property Name="tongTienGoc" Type="Double" />
+          <Property Name="tongTienTraLai" Type="Double" />
+          <Property Name="tongLai" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_Ban">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idKhuVuc" Type="Int32" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="trangthai" Type="Boolean" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_DonViTinh">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_HanSuDung">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_KhachHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="diachi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="gioitinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="0" />
+          <Property Name="masoThue" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_Kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_KhuVuc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_LoaiHoaDonBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_LyDoChi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_LyDoHuyBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_LyDoHuyDatBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_LyDoNhap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_LyDoThu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_LyDoXuat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_NhaCungCap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="diachi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="congty" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="masoThue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_NhaSanXuat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_NhomHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ten" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_NhomKhachHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_NhomNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_ChiTietNhapHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhapHang" Type="Int32" />
+          <Property Name="idHangHoa" Type="Int32" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="dongia" Type="Double" />
+          <Property Name="giamgia" Type="Double" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="thanhtien" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_ChiTietNhapNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhapNguyenLieu" Type="Int32" />
+          <Property Name="idNguyenLieu" Type="Int32" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="dongia" Type="Double" />
+          <Property Name="giamgia" Type="Double" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="thanhtien" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_ChiTietXuatHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idXuatHang" Type="Int32" />
+          <Property Name="idHangHoa" Type="Int32" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="dongia" Type="Double" />
+          <Property Name="giamgia" Type="Double" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="thanhtien" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_ChiTietXuatNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idXuatNguyenLieu" Type="Int32" />
+          <Property Name="idNguyenLieu" Type="Int32" />
+          <Property Name="dongia" Type="Double" />
+          <Property Name="giamgia" Type="Double" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="thanhtien" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_HangHoa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mavach" Type="String" MaxLength="9" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idNhaSanXuat" Type="Int32" />
+          <Property Name="idNhomHang" Type="Int32" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="giaSi" Type="Double" />
+          <Property Name="giaLe" Type="Double" />
+          <Property Name="giaVon" Type="Double" />
+          <Property Name="hanSuDung" Type="Double" />
+          <Property Name="idHanSuDung" Type="Int32" />
+          <Property Name="mota" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Double" Nullable="false" />
+          <Property Name="tonToiThieu" Type="Double" />
+          <Property Name="hinhanh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ngungKinhDoanh" Type="Boolean" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_NguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idNhomNguyenLieu" Type="Int32" />
+          <Property Name="ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="tonToiThieu" Type="Double" />
+          <Property Name="hanSuDung" Type="Double" />
+          <Property Name="idHanSuDung" Type="Int32" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_NhapHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idLyDoNhap" Type="Int32" />
+          <Property Name="nguoiGiao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="nguoiNhan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+          <Property Name="tongTien" Type="Double" />
+          <Property Name="giamGia" Type="Double" />
+          <Property Name="thanhtoan" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_NhapNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nguoiGiao" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="nguoiNhan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="idLyDoNhap" Type="Int32" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+          <Property Name="tongTien" Type="Double" />
+          <Property Name="giamGia" Type="Double" />
+          <Property Name="thanhtoan" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_PhieuChi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="nguoiChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="idLyDoChi" Type="Int32" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+          <Property Name="sotien" Type="Double" />
+          <Property Name="chungtuKemTheo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="nguoiNhan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_PhieuThu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="nguoiThu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="idLyDoThu" Type="Int32" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+          <Property Name="sotien" Type="Double" />
+          <Property Name="chungtuKemTheo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="nguoiNop" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_XuatHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="idLyDoXuat" Type="Int32" />
+          <Property Name="nguoiXuat" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="nguoiNhan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+          <Property Name="tongTien" Type="Double" />
+          <Property Name="giamGia" Type="Double" />
+          <Property Name="thanhtoan" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KT_XuatNguyenLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="idLyDoXuat" Type="Int32" />
+          <Property Name="nguoiXuat" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="nguoiNhan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+          <Property Name="tongTien" Type="Double" />
+          <Property Name="giamGia" Type="Double" />
+          <Property Name="thanhtoan" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ORDER_ChiTietChuyenBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idChuyenBan" Type="Int32" />
+          <Property Name="idThucDon" Type="Int32" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ORDER_ChiTietDatBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idThucDon" Type="Int32" />
+          <Property Name="idDatBan" Type="Int32" />
+          <Property Name="dongia" Type="Double" />
+          <Property Name="giaVon" Type="Double" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="thanhtien" Type="Double" />
+          <Property Name="lai" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ORDER_ChiTietHoaDonBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idThucDon" Type="Int32" />
+          <Property Name="idHoaDonBanHang" Type="Int32" />
+          <Property Name="dongia" Type="Double" />
+          <Property Name="giaVon" Type="Double" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="thanhtien" Type="Double" />
+          <Property Name="lai" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ORDER_ChuyenBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="idHoaDonTuBan" Type="Int32" />
+          <Property Name="idTuBan" Type="Int32" />
+          <Property Name="idHoaDonDenBan" Type="Int32" />
+          <Property Name="idDenBan" Type="Int32" />
+          <Property Name="isChuyenHet" Type="Boolean" Nullable="false" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ORDER_DatBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="idKhachHang" Type="Int32" />
+          <Property Name="idBan" Type="Int32" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soKhach" Type="Int32" />
+          <Property Name="thoigianDatBan" Type="DateTime" Precision="3" />
+          <Property Name="thoigianHenToi" Type="DateTime" Precision="3" />
+          <Property Name="thoigianToi" Type="DateTime" Precision="3" />
+          <Property Name="isToi" Type="Boolean" Nullable="false" />
+          <Property Name="isHuy" Type="Boolean" Nullable="false" />
+          <Property Name="idLyDoHuy" Type="Int32" />
+          <Property Name="tongTienDuKien" Type="Double" />
+          <Property Name="giamDuKienTien" Type="Double" />
+          <Property Name="giamDuKienPhanTram" Type="Double" />
+          <Property Name="vatDuKienTien" Type="Double" />
+          <Property Name="vatDuKienPhanTram" Type="Double" />
+          <Property Name="thanhtoanDuKien" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ORDER_GhepBan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="idTuBan" Type="Int32" />
+          <Property Name="idDenban" Type="Int32" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ORDER_HoaDonBanHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="nhanvien" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="idKhachHang" Type="Int32" />
+          <Property Name="idDatBan" Type="Int32" />
+          <Property Name="idBan" Type="Int32" />
+          <Property Name="soKhach" Type="Int32" />
+          <Property Name="thoigianVao" Type="DateTime" Precision="3" />
+          <Property Name="thoigianRa" Type="DateTime" Precision="3" />
+          <Property Name="tongThoiGian" Type="Double" />
+          <Property Name="isHuy" Type="Boolean" Nullable="false" />
+          <Property Name="idLyDoHuy" Type="Int32" />
+          <Property Name="tongTien" Type="Double" />
+          <Property Name="giamTien" Type="Double" />
+          <Property Name="giamPhanTram" Type="Double" />
+          <Property Name="vatTien" Type="Double" />
+          <Property Name="vatPhanTram" Type="Double" />
+          <Property Name="isThanhToan" Type="Boolean" />
+          <Property Name="thanhtoan" Type="Double" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ORDER_HuyMon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="idHoaDonBanHang" Type="Int32" />
+          <Property Name="idThucDon" Type="Int32" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ORDER_ThemMon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idNhanVien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="idHoaDonBanHang" Type="Int32" />
+          <Property Name="idThucDon" Type="Int32" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="idDonViTinh" Type="Int32" />
+          <Property Name="thoigian" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="Karaoke2017Model.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Karaoke2017Model.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaim">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="Karaoke2017Model.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Karaoke2017Model.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogin">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Type="Karaoke2017Model.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Karaoke2017Model.AspNetUserRole" Role="AspNetUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Karaoke2017ModelStoreContainer" CdmEntityContainer="Karaoke2017Entities">
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="Karaoke2017Model.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="Karaoke2017Model.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserRoles">
+            <EntityTypeMapping TypeName="Karaoke2017Model.AspNetUserRole">
+              <MappingFragment StoreEntitySet="AspNetUserRoles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="Karaoke2017Model.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="GoogleAuthenticatorSecretKey" ColumnName="GoogleAuthenticatorSecretKey" />
+                <ScalarProperty Name="IsGoogleAuthenticatorEnabled" ColumnName="IsGoogleAuthenticatorEnabled" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BH_ChiTietBanHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.BH_ChiTietBanHang">
+              <MappingFragment StoreEntitySet="BH_ChiTietBanHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="giaVon" ColumnName="giaVon" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="idHangHoa" ColumnName="idHangHoa" />
+                <ScalarProperty Name="idHoaDonBanHang" ColumnName="idHoaDonBanHang" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BH_ChiTietTraHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.BH_ChiTietTraHang">
+              <MappingFragment StoreEntitySet="BH_ChiTietTraHang">
+                <ScalarProperty Name="lai" ColumnName="lai" />
+                <ScalarProperty Name="giaNhapLai" ColumnName="giaNhapLai" />
+                <ScalarProperty Name="giaGoc" ColumnName="giaGoc" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+                <ScalarProperty Name="idTraHang" ColumnName="idTraHang" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BH_HoaDonBanHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.BH_HoaDonBanHang">
+              <MappingFragment StoreEntitySet="BH_HoaDonBanHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="daThanhToan" ColumnName="daThanhToan" />
+                <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+                <ScalarProperty Name="giamgia" ColumnName="giamgia" />
+                <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+                <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="idKhachHang" ColumnName="idKhachHang" />
+                <ScalarProperty Name="idLoaiHoaDonBanHang" ColumnName="idLoaiHoaDonBanHang" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BH_TraHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.BH_TraHang">
+              <MappingFragment StoreEntitySet="BH_TraHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="tongLai" ColumnName="tongLai" />
+                <ScalarProperty Name="tongTienTraLai" ColumnName="tongTienTraLai" />
+                <ScalarProperty Name="tongTienGoc" ColumnName="tongTienGoc" />
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="idKhachHang" ColumnName="idKhachHang" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_Ban">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_Ban">
+              <MappingFragment StoreEntitySet="DM_Ban">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="idKhuVuc" ColumnName="idKhuVuc" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_DonViTinh">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_DonViTinh">
+              <MappingFragment StoreEntitySet="DM_DonViTinh">
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_HanSuDung">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_HanSuDung">
+              <MappingFragment StoreEntitySet="DM_HanSuDung">
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_KhachHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_KhachHang">
+              <MappingFragment StoreEntitySet="DM_KhachHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="masoThue" ColumnName="masoThue" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_Kho">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_Kho">
+              <MappingFragment StoreEntitySet="DM_Kho">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_KhuVuc">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_KhuVuc">
+              <MappingFragment StoreEntitySet="DM_KhuVuc">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LoaiHoaDonBanHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_LoaiHoaDonBanHang">
+              <MappingFragment StoreEntitySet="DM_LoaiHoaDonBanHang">
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LyDoChi">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoChi">
+              <MappingFragment StoreEntitySet="DM_LyDoChi">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LyDoHuyBan">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoHuyBan">
+              <MappingFragment StoreEntitySet="DM_LyDoHuyBan">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LyDoHuyDatBan">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoHuyDatBan">
+              <MappingFragment StoreEntitySet="DM_LyDoHuyDatBan">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LyDoNhap">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoNhap">
+              <MappingFragment StoreEntitySet="DM_LyDoNhap">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LyDoThu">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoThu">
+              <MappingFragment StoreEntitySet="DM_LyDoThu">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LyDoXuat">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_LyDoXuat">
+              <MappingFragment StoreEntitySet="DM_LyDoXuat">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_NhaCungCap">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhaCungCap">
+              <MappingFragment StoreEntitySet="DM_NhaCungCap">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="masoThue" ColumnName="masoThue" />
+                <ScalarProperty Name="congty" ColumnName="congty" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_NhaSanXuat">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhaSanXuat">
+              <MappingFragment StoreEntitySet="DM_NhaSanXuat">
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_NhomHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhomHang">
+              <MappingFragment StoreEntitySet="DM_NhomHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_NhomKhachHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhomKhachHang">
+              <MappingFragment StoreEntitySet="DM_NhomKhachHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_NhomNguyenLieu">
+            <EntityTypeMapping TypeName="Karaoke2017Model.DM_NhomNguyenLieu">
+              <MappingFragment StoreEntitySet="DM_NhomNguyenLieu">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_ChiTietNhapHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_ChiTietNhapHang">
+              <MappingFragment StoreEntitySet="KT_ChiTietNhapHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="giamgia" ColumnName="giamgia" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="idHangHoa" ColumnName="idHangHoa" />
+                <ScalarProperty Name="idNhapHang" ColumnName="idNhapHang" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_ChiTietNhapNguyenLieu">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_ChiTietNhapNguyenLieu">
+              <MappingFragment StoreEntitySet="KT_ChiTietNhapNguyenLieu">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="giamgia" ColumnName="giamgia" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="idNguyenLieu" ColumnName="idNguyenLieu" />
+                <ScalarProperty Name="idNhapNguyenLieu" ColumnName="idNhapNguyenLieu" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_ChiTietXuatHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_ChiTietXuatHang">
+              <MappingFragment StoreEntitySet="KT_ChiTietXuatHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="giamgia" ColumnName="giamgia" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="idHangHoa" ColumnName="idHangHoa" />
+                <ScalarProperty Name="idXuatHang" ColumnName="idXuatHang" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_ChiTietXuatNguyenLieu">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_ChiTietXuatNguyenLieu">
+              <MappingFragment StoreEntitySet="KT_ChiTietXuatNguyenLieu">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="giamgia" ColumnName="giamgia" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="idNguyenLieu" ColumnName="idNguyenLieu" />
+                <ScalarProperty Name="idXuatNguyenLieu" ColumnName="idXuatNguyenLieu" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_HangHoa">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_HangHoa">
+              <MappingFragment StoreEntitySet="KT_HangHoa">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ngungKinhDoanh" ColumnName="ngungKinhDoanh" />
+                <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+                <ScalarProperty Name="tonToiThieu" ColumnName="tonToiThieu" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="idHanSuDung" ColumnName="idHanSuDung" />
+                <ScalarProperty Name="hanSuDung" ColumnName="hanSuDung" />
+                <ScalarProperty Name="giaVon" ColumnName="giaVon" />
+                <ScalarProperty Name="giaLe" ColumnName="giaLe" />
+                <ScalarProperty Name="giaSi" ColumnName="giaSi" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="idNhomHang" ColumnName="idNhomHang" />
+                <ScalarProperty Name="idNhaSanXuat" ColumnName="idNhaSanXuat" />
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="mavach" ColumnName="mavach" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_NguyenLieu">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_NguyenLieu">
+              <MappingFragment StoreEntitySet="KT_NguyenLieu">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="idHanSuDung" ColumnName="idHanSuDung" />
+                <ScalarProperty Name="hanSuDung" ColumnName="hanSuDung" />
+                <ScalarProperty Name="tonToiThieu" ColumnName="tonToiThieu" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="idNhomNguyenLieu" ColumnName="idNhomNguyenLieu" />
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_NhapHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_NhapHang">
+              <MappingFragment StoreEntitySet="KT_NhapHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+                <ScalarProperty Name="giamGia" ColumnName="giamGia" />
+                <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="nguoiNhan" ColumnName="nguoiNhan" />
+                <ScalarProperty Name="nguoiGiao" ColumnName="nguoiGiao" />
+                <ScalarProperty Name="idLyDoNhap" ColumnName="idLyDoNhap" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_NhapNguyenLieu">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_NhapNguyenLieu">
+              <MappingFragment StoreEntitySet="KT_NhapNguyenLieu">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+                <ScalarProperty Name="giamGia" ColumnName="giamGia" />
+                <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="idLyDoNhap" ColumnName="idLyDoNhap" />
+                <ScalarProperty Name="nguoiNhan" ColumnName="nguoiNhan" />
+                <ScalarProperty Name="nguoiGiao" ColumnName="nguoiGiao" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_PhieuChi">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_PhieuChi">
+              <MappingFragment StoreEntitySet="KT_PhieuChi">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="nguoiNhan" ColumnName="nguoiNhan" />
+                <ScalarProperty Name="chungtuKemTheo" ColumnName="chungtuKemTheo" />
+                <ScalarProperty Name="sotien" ColumnName="sotien" />
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="idLyDoChi" ColumnName="idLyDoChi" />
+                <ScalarProperty Name="nguoiChi" ColumnName="nguoiChi" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_PhieuThu">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_PhieuThu">
+              <MappingFragment StoreEntitySet="KT_PhieuThu">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="nguoiNop" ColumnName="nguoiNop" />
+                <ScalarProperty Name="chungtuKemTheo" ColumnName="chungtuKemTheo" />
+                <ScalarProperty Name="sotien" ColumnName="sotien" />
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="idLyDoThu" ColumnName="idLyDoThu" />
+                <ScalarProperty Name="nguoiThu" ColumnName="nguoiThu" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_XuatHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_XuatHang">
+              <MappingFragment StoreEntitySet="KT_XuatHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+                <ScalarProperty Name="giamGia" ColumnName="giamGia" />
+                <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="nguoiNhan" ColumnName="nguoiNhan" />
+                <ScalarProperty Name="nguoiXuat" ColumnName="nguoiXuat" />
+                <ScalarProperty Name="idLyDoXuat" ColumnName="idLyDoXuat" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KT_XuatNguyenLieu">
+            <EntityTypeMapping TypeName="Karaoke2017Model.KT_XuatNguyenLieu">
+              <MappingFragment StoreEntitySet="KT_XuatNguyenLieu">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+                <ScalarProperty Name="giamGia" ColumnName="giamGia" />
+                <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="nguoiNhan" ColumnName="nguoiNhan" />
+                <ScalarProperty Name="nguoiXuat" ColumnName="nguoiXuat" />
+                <ScalarProperty Name="idLyDoXuat" ColumnName="idLyDoXuat" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_ChiTietChuyenBan">
+            <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ChiTietChuyenBan">
+              <MappingFragment StoreEntitySet="ORDER_ChiTietChuyenBan">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+                <ScalarProperty Name="idChuyenBan" ColumnName="idChuyenBan" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_ChiTietDatBan">
+            <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ChiTietDatBan">
+              <MappingFragment StoreEntitySet="ORDER_ChiTietDatBan">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="lai" ColumnName="lai" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="giaVon" ColumnName="giaVon" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="idDatBan" ColumnName="idDatBan" />
+                <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_ChiTietHoaDonBanHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ChiTietHoaDonBanHang">
+              <MappingFragment StoreEntitySet="ORDER_ChiTietHoaDonBanHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="lai" ColumnName="lai" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="giaVon" ColumnName="giaVon" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="idHoaDonBanHang" ColumnName="idHoaDonBanHang" />
+                <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_ChuyenBan">
+            <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ChuyenBan">
+              <MappingFragment StoreEntitySet="ORDER_ChuyenBan">
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="isChuyenHet" ColumnName="isChuyenHet" />
+                <ScalarProperty Name="idDenBan" ColumnName="idDenBan" />
+                <ScalarProperty Name="idHoaDonDenBan" ColumnName="idHoaDonDenBan" />
+                <ScalarProperty Name="idTuBan" ColumnName="idTuBan" />
+                <ScalarProperty Name="idHoaDonTuBan" ColumnName="idHoaDonTuBan" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_DatBan">
+            <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_DatBan">
+              <MappingFragment StoreEntitySet="ORDER_DatBan">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtoanDuKien" ColumnName="thanhtoanDuKien" />
+                <ScalarProperty Name="vatDuKienPhanTram" ColumnName="vatDuKienPhanTram" />
+                <ScalarProperty Name="vatDuKienTien" ColumnName="vatDuKienTien" />
+                <ScalarProperty Name="giamDuKienPhanTram" ColumnName="giamDuKienPhanTram" />
+                <ScalarProperty Name="giamDuKienTien" ColumnName="giamDuKienTien" />
+                <ScalarProperty Name="tongTienDuKien" ColumnName="tongTienDuKien" />
+                <ScalarProperty Name="idLyDoHuy" ColumnName="idLyDoHuy" />
+                <ScalarProperty Name="isHuy" ColumnName="isHuy" />
+                <ScalarProperty Name="isToi" ColumnName="isToi" />
+                <ScalarProperty Name="thoigianToi" ColumnName="thoigianToi" />
+                <ScalarProperty Name="thoigianHenToi" ColumnName="thoigianHenToi" />
+                <ScalarProperty Name="thoigianDatBan" ColumnName="thoigianDatBan" />
+                <ScalarProperty Name="soKhach" ColumnName="soKhach" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="idBan" ColumnName="idBan" />
+                <ScalarProperty Name="idKhachHang" ColumnName="idKhachHang" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_GhepBan">
+            <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_GhepBan">
+              <MappingFragment StoreEntitySet="ORDER_GhepBan">
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="idDenban" ColumnName="idDenban" />
+                <ScalarProperty Name="idTuBan" ColumnName="idTuBan" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_HoaDonBanHang">
+            <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_HoaDonBanHang">
+              <MappingFragment StoreEntitySet="ORDER_HoaDonBanHang">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+                <ScalarProperty Name="isThanhToan" ColumnName="isThanhToan" />
+                <ScalarProperty Name="vatPhanTram" ColumnName="vatPhanTram" />
+                <ScalarProperty Name="vatTien" ColumnName="vatTien" />
+                <ScalarProperty Name="giamPhanTram" ColumnName="giamPhanTram" />
+                <ScalarProperty Name="giamTien" ColumnName="giamTien" />
+                <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+                <ScalarProperty Name="idLyDoHuy" ColumnName="idLyDoHuy" />
+                <ScalarProperty Name="isHuy" ColumnName="isHuy" />
+                <ScalarProperty Name="tongThoiGian" ColumnName="tongThoiGian" />
+                <ScalarProperty Name="thoigianRa" ColumnName="thoigianRa" />
+                <ScalarProperty Name="thoigianVao" ColumnName="thoigianVao" />
+                <ScalarProperty Name="soKhach" ColumnName="soKhach" />
+                <ScalarProperty Name="idBan" ColumnName="idBan" />
+                <ScalarProperty Name="idDatBan" ColumnName="idDatBan" />
+                <ScalarProperty Name="idKhachHang" ColumnName="idKhachHang" />
+                <ScalarProperty Name="nhanvien" ColumnName="nhanvien" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_HuyMon">
+            <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_HuyMon">
+              <MappingFragment StoreEntitySet="ORDER_HuyMon">
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+                <ScalarProperty Name="idHoaDonBanHang" ColumnName="idHoaDonBanHang" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_ThemMon">
+            <EntityTypeMapping TypeName="Karaoke2017Model.ORDER_ThemMon">
+              <MappingFragment StoreEntitySet="ORDER_ThemMon">
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="idDonViTinh" ColumnName="idDonViTinh" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="idThucDon" ColumnName="idThucDon" />
+                <ScalarProperty Name="idHoaDonBanHang" ColumnName="idHoaDonBanHang" />
+                <ScalarProperty Name="idNhanVien" ColumnName="idNhanVien" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

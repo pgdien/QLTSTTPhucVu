@@ -1,0 +1,86 @@
+﻿.nav.side-menu > li {
+            border-bottom: 1px solid;
+        }
+
+        #gridContainer {
+            /*font-size: 12px;*/
+            color: #000;
+            height: 81vh;
+        }
+
+        .x_title {
+            margin-bottom: 0px;
+            padding: 0px;
+            border-bottom: none;
+        }
+
+        .x_panel {
+            margin-bottom: 0px;
+            padding: 7px 5px;
+            /*height: 90vh;*/
+        }
+
+        .x_content {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .thumbnail {
+            height: auto;
+            padding: 0px;
+        }
+
+            .thumbnail .image {
+                height: auto;
+            }
+
+            .thumbnail .caption {
+                padding: 0px;
+                text-align: center;
+            }
+
+        .view img {
+            margin: 0px auto;
+        }
+
+        .view .tools a {
+            font-size: 2em;
+        }
+
+        .caption {
+            padding: 0px;
+        }
+
+            .caption p {
+                margin: 0px;
+            }
+
+        .nav-md .container.body .right_col {
+            padding: 10px 10px 0;
+            margin-left: 230px;
+        }
+
+        .nav-sm .container.body .right_col {
+            padding: 0px 12px;
+            /*margin-left: 140px;*/
+            z-index: 2;
+        }
+
+        .nav_menu {
+            margin-bottom: 0px;
+        }
+
+        /*validationsummary group*/
+        .dx-validationsummary-item {
+            color: #d9534f;
+            float: left;
+            margin-left: 20px;
+        }
+
+.panel .panel-heading{
+    padding: 2px;
+}
+.panel-title{
+    text-transform: uppercase;
+    font-weight: bold !important;
+}

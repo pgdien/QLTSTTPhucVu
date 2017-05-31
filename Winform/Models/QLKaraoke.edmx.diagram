@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c4b420b8a2644c829582e1a1387c0cb0" Name="Diagram1">
+        <EntityTypeShape EntityType="Karaoke2017Model.AspNetUserClaim" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="Karaoke2017Model.AspNetUserLogin" Width="1.5" PointX="3" PointY="6.25" />
+        <EntityTypeShape EntityType="Karaoke2017Model.AspNetUserRole" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="Karaoke2017Model.AspNetUser" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="Karaoke2017Model.BH_ChiTietBanHang" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.BH_ChiTietTraHang" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.BH_HoaDonBanHang" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.BH_TraHang" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_Ban" Width="1.5" PointX="5.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_DonViTinh" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_HanSuDung" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_KhachHang" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_Kho" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_KhuVuc" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_LoaiHoaDonBanHang" Width="1.5" PointX="9.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_LyDoChi" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_LyDoHuyBan" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_LyDoHuyDatBan" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_LyDoNhap" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_LyDoThu" Width="1.5" PointX="11.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_LyDoXuat" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_NhaCungCap" Width="1.5" PointX="11.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_NhaSanXuat" Width="1.5" PointX="8.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_NhomHang" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_NhomKhachHang" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.DM_NhomNguyenLieu" Width="1.5" PointX="13.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_ChiTietNhapHang" Width="1.5" PointX="13.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_ChiTietNhapNguyenLieu" Width="1.5" PointX="13.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_ChiTietXuatHang" Width="1.5" PointX="10.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_ChiTietXuatNguyenLieu" Width="1.5" PointX="2.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_HangHoa" Width="1.5" PointX="4.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_NguyenLieu" Width="1.5" PointX="12.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_NhapHang" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_NhapNguyenLieu" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_PhieuChi" Width="1.5" PointX="15.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_PhieuThu" Width="1.5" PointX="6.75" PointY="15.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_XuatHang" Width="1.5" PointX="15.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.KT_XuatNguyenLieu" Width="1.5" PointX="16.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.ORDER_ChiTietChuyenBan" Width="1.5" PointX="16.75" PointY="16.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.ORDER_ChiTietDatBan" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.ORDER_ChiTietHoaDonBanHang" Width="1.5" PointX="17.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.ORDER_ChuyenBan" Width="1.5" PointX="17.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.ORDER_DatBan" Width="1.5" PointX="8.75" PointY="17.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.ORDER_GhepBan" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.ORDER_HoaDonBanHang" Width="1.5" PointX="10.75" PointY="18.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.ORDER_HuyMon" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Karaoke2017Model.ORDER_ThemMon" Width="1.5" PointX="12.75" PointY="18.75" />
+        <AssociationConnector Association="Karaoke2017Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Karaoke2017Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Karaoke2017Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
